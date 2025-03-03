@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongondb:/127.0.0.1:27017/fakeProduct");
 
 const userSchema = mongoose.Schema({
   fullname: String,
