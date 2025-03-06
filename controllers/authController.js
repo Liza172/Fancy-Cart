@@ -51,7 +51,7 @@ module.exports.loginUser = async function(req, res){
     {
       let token = generateToken(user);
       res.cookie("token", token);
-      res.send("You can login")
+      res.send("You are Logged in");
     }
     else
     {
