@@ -1,6 +1,6 @@
 <%- include('./partials/header') %>
-<div class="w-full h-screen justify-between items-start  px-5 py-5 gap-10">
-    <div class=" w-[75%] flex flex-wrap">
+<div class="w-full h-screen items-start flex px-5 py-5 gap-10">
+    <div class=" w-[75%] flex flex-wrap gap-6">
     <% user.cart.forEach((item)=>{ %>
             
                 <div class="rounded-md overflow-hidden">
@@ -15,7 +15,8 @@
                             <div class="px-2 py-1 rounded-md bg-white text-black">01</div>
                             <i class="w-7 h-7 bg-white flex rounded-full items-center justify-center ri-subtract-line"></i>
                         </div>
-                    </div>    
+                    </div>   
+                </div> 
             
     <% }) %>
 </div>
