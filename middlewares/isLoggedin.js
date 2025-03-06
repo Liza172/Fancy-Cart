@@ -9,7 +9,7 @@ module.exports = async function(req, res, next){
   }
 
   try{
-    let = decoded = jwt.verify(req.cookies.token, process.env.JWT_KEY);
+    let decoded = jwt.verify(req.cookies.token, process.env.JWT_KEY);
     let user = await userModel
       .findOne({email : decoded.email })
       .select("-possword");
@@ -21,4 +21,4 @@ module.exports = async function(req, res, next){
     req.redirect("/");
   }
 
-}
+};

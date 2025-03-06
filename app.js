@@ -7,6 +7,7 @@ const usersRouter = require("./routes/usersRouter");
 const productsRouter = require("./routes/productsRouter");
 const flash = require("connect-flash");
 const expressSession = require("express-session");
+const indexRouter = require("./routes/index");
 
 require("dotenv").config();
 const db = require("./config/mongoose-connection")
@@ -25,15 +26,10 @@ app.use(
 )
 
 app.use(flash());
-app.use(express.static(path,join(__dirname, "punlic")));
+app.use(express.static(path.join(__dirname, "punlic")));
 app.set("view engine", "ejs");
 
-
-app.get("/", (req, res)=>
-{
-  res.send("hey");
-});
-
+app.use("/", indexRouter);
 app.use("/owners", ownersRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter)
